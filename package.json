@@ -1,0 +1,43 @@
+{
+  "name": "clostridium",
+  "version": "0.0.1",
+  "description": "libtorrent node.js bindings",
+  "main": "index.js",
+  "libraries": [
+    "v8",
+    "torrent"
+  ],
+  "scripts": {
+    "test": "mocha --compilers js:babel/register",
+    "build": "make -f ../naio/makefile",
+    "build:dev": "make -f node_modules/naio/makefile",
+    "babel": "babel clostridium.js -o index.js",
+    "postinstall": "npm run build",
+    "prepublish": "npm run babel",
+    "push": "npm run babel && git add . && git commit && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilhelmmatilainen/clostridium.git"
+  },
+  "author": "Wilhelm Matilainen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilhelmmatilainen/clostridium/issues"
+  },
+  "homepage": "https://github.com/wilhelmmatilainen/clostridium#readme",
+  "keywords": [
+    "native",
+	"torrent"
+  ],
+  "dependencies": {
+    "naio": "^0.0.5",
+    "nan": "^2.0.5"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "chai": "^3.2.0",
+    "debug": "^2.2.0",
+    "mocha": "^2.2.5"
+  }
+}
