@@ -5,7 +5,7 @@
   "main": "index.js",
   "libraries": [
     "v8",
-    "torrent"
+    "torrent-rasterbar"
   ],
   "scripts": {
     "test": "mocha --compilers js:babel/register",
